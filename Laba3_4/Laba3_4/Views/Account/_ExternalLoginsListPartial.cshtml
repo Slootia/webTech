@@ -1,0 +1,28 @@
+﻿@model Laba3_4.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<h4>Use another service to login.</h4>
+<hr />
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                Вexternal authentication services are not configured. Details on configuring login through external 
+                services for this ASP.NET application
+            </p>
+        </div>
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (var p in loginProviders) {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Войти с помощью учетной записи @p.Caption">@p.AuthenticationType</button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}

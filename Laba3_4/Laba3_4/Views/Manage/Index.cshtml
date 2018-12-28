@@ -1,0 +1,32 @@
+﻿@model Laba3_4.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change user</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change Password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Set Password", "SetPassword")
+            }
+            ]
+        </dd>
+        <dt>External usernames:</dt>
+        <dd>
+            @Model.Logins.Count [
+            @Html.ActionLink("Manage", "ManageLogins") ]
+        </dd>
+    </dl>
+</div>
