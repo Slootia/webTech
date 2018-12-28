@@ -1,0 +1,52 @@
+* {
+    font-family: sans-serif;}
+div.container {
+    margin: 0 auto;}
+body {
+    background: #f2f2f2;}
+header{
+    position: fixed top;
+    background: purple;
+    height: 80px;
+    text-align: center;}
+h1 {
+    text-align: center;
+    color: white;
+    line-height: 80px;}
+.control h1 {
+    color: #000000;}
+article {
+    display: flex;
+    flex-direction: row;}
+div.control {
+    background: #f2f2f2;
+    text-align: center;
+    flex: 1;}
+div.content {
+    background: #f2f2f2;
+    padding-top: 3%;
+    flex: 2;}
+#PIL {
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;}
+div.f{
+    background: pink;
+    flex: 1;}
+footer {
+    display: flex;}
+footer p {
+    padding-left: 15px;}
+@media all {
+    div.container {
+        width: 1200px;
+        margin: 0 auto;}
+    header{
+        margin: 10 0px;}
+    footer{
+        flex-direction: row;}}
+@media all and (max-width: 967px){
+    div.container {
+        width: 100%;}
+    footer{
+        flex-direction: column;}}

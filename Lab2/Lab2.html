@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head> 
+        <meta charset="utf-8">
+        <title> Lab2 </title>
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <div class="container">
+            <header> 
+                <h1> Lab2 </h1> 
+            </header>
+                <article>
+                    <div class="control">
+                        <h1>Игра в жизнь</h1>
+                        <p>Размер поля: <span id="sizeText"></span></p>
+                        <input type="range" min="3" max="20" value="5" class="slider" id="sizeSlider">
+                        <p>Период: <span id="periodText"></span></p>
+                        <input type="range" min=".05" max="2" value="1" step=".05" class="slider" id="periodSlider"><br>
+                        <input type="button" class="control-button" value="Начать" id="startPauseButton" /><br>
+                        <input type="button" class="control-button" value="Сбросить" id="abortButton" /><br>
+                        <input type="button" class="control-button" value="Очистить" id="clearButton" /><br>
+                        <p>Поколение: <span id="genText"></span></p>
+                    </div>
+                    <div class="content" id="fieldContainer">
+                        <canvas id="field">
+                            Поле
+                        </canvas>
+                    </div>
+                </article>
+            <footer>
+                <div class="f"> 
+                    <p>&copy;&nbsp;2018 | Кузьминых Иван и Кузьминых Мария</p>
+                </div>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
